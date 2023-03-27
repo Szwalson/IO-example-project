@@ -12,3 +12,14 @@ b = 5
 obwod2 = 2*a+2*b
 pole2 = a*b
 print('Obwód prostokąta wynosi ' + str(obwod2) + ', a pole wynosi ' + str(pole2) + '.')
+
+# trapez
+
+a = 10
+b = 20
+c = d = 5
+h = 8
+
+obwod3 = a+b+c+d
+pole3 = ((a+b)*h)/2
+print('Obwód trapezu wynosi ' + str(obwod3) + ', a pole wynosi ' + str(pole3) + '.')
