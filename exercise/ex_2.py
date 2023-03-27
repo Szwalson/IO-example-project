@@ -1,3 +1,5 @@
+import math
+
 # kwadrat
 a = 10
 obwod1 = a * 4
@@ -23,3 +25,11 @@ h = 8
 obwod3 = a+b+c+d
 pole3 = ((a+b)*h)/2
 print('Obwód trapezu wynosi ' + str(obwod3) + ', a pole wynosi ' + str(pole3) + '.')
+
+# koło
+
+r = 5
+pi = math.pi
+obwod4 = 2*pi*r
+pole4 = pi*(r**2)
+print('Obwód okręgu wynosi ' + str(obwod4) + ', a pole koła wynosi ' + str(pole4) + '.')
