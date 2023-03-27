@@ -2,7 +2,6 @@ def hello(a: str) -> str:
     # TODO
     return "Hello"
 
-
 print("Example")
 print(hello("Ola"))
 
