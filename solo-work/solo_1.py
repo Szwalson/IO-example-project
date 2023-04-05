@@ -101,3 +101,17 @@ def sortowanie(lista_wejsciowa):
 print("Alfabetyczna lista studentow wynosi: ")
 for student in sortowanie(studenci):
     print(student)
+
+
+# zadanie 1.9
+
+# policz wszystkich studentow z tablicy, ktorych nazwisko zaczyna sie na N
+studenci = ["Anna Szczesny", "Tomasz Nijaki", "Barbara Kowalska", "Jan Niezbedny"]
+studenci_lastnames = []
+for student in studenci:
+    studenci_lastnames.append(student.split()[-1])
+
+studenciN = [x for x in studenci_lastnames if x.startswith("N")]
+
+liczba_n = len(studenciN)
+print("Liczba studentow na N wynosi: "+str(liczba_n))
