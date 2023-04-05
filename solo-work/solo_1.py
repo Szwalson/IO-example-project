@@ -11,7 +11,7 @@ print("{message} {name}".format(message=hello, name=student))
 
 # zadanie 1.2
 
-student = input("Wpisz swoje imię: ")
+student = input("Wpisz swoje imie: ")
 
 print("Hello {name}".format(name=student))
 
@@ -65,3 +65,20 @@ liczba_nawiasow_otwierajacych = ciag_znakow.count("(")
 # oczekiwany rezultat:
 # Liczba nawiasow otwierajacych wynosi: 4
 print("Liczba nawiasow otwierajacych wynosi: " + str(liczba_nawiasow_otwierajacych))
+
+
+# zadanie 1.7
+
+import numpy
+
+# posortuj alfabetycznie (od imienia) studentow
+studenci = ["Anna Szczesny", "Tomasz Nijaki", "Barbara Kowalska", "Jan Niezbedny"]
+
+# oczekiwany rezultat:
+# Anna Szczesny
+# Barbara Kowalska
+# Jan Niezbedny
+# Tomasz Nijaki
+print("Alfabetyczna lista studentow wynosi: ")
+for student in numpy.sort(studenci):
+    print(student)
