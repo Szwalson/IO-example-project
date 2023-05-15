@@ -13,10 +13,12 @@ class Trojkat:
 
 
 trojkat_rownoboczny = Trojkat(10, 10, 10, 8)
-#print(trojkat_rownoboczny.obwod())
+# print(trojkat_rownoboczny.obwod())
 
 trojkat2 = Trojkat(5, 4, 3, 5)
-#print(trojkat2.pole())
+
+
+# print(trojkat2.pole())
 
 
 class Trapez:
@@ -35,7 +37,9 @@ class Trapez:
 
 
 trapez_rownoramienny = Trapez(10, 8, 6, 6, 5)
-#print(trapez_rownoramienny.obwod(), trapez_rownoramienny.pole())
+
+
+# print(trapez_rownoramienny.obwod(), trapez_rownoramienny.pole())
 
 
 class Student:
@@ -55,20 +59,24 @@ class Student:
         self.oceny.append(ocena)
 
     def zwroc_srednia(self):
-        return sum(self.oceny)/len(self.oceny)
+        return sum(self.oceny) / len(self.oceny)
+
 
 student_wojtek = Student("Wojciech", "Szwałek", 120135)
-#print(student_wojtek)
-#print(int(student_wojtek))
+# print(student_wojtek)
+# print(int(student_wojtek))
 
 student_wojtek.dodaj_ocene(5)
 student_wojtek.dodaj_ocene(4)
-#print(student_wojtek.oceny)
-#print(student_wojtek.zwroc_srednia())
+
+
+# print(student_wojtek.oceny)
+# print(student_wojtek.zwroc_srednia())
 
 
 class Wynik_biegu:
-    def __init__(self, lokalizacja, dystans, przewyzszenie, uczestnik, czas_minuty, data, godzina_startu, limit_czasu_minuty):
+    def __init__(self, lokalizacja, dystans, przewyzszenie, uczestnik, czas_minuty, data, godzina_startu,
+                 limit_czasu_minuty):
         self.lokalizacja = lokalizacja
         self.dystans = dystans
         self.przewyzszenie = przewyzszenie
@@ -84,19 +92,20 @@ class Wynik_biegu:
                f"Czas: {self.czas_minuty} min"
 
     def sr_tempo(self):
-        sr_tempo = round(self.czas_minuty/self.dystans, 2)
+        sr_tempo = round(self.czas_minuty / self.dystans, 2)
         return f"Średnie tempo: \n" \
                f"{sr_tempo} min/km"
 
     def miedzyczasy(self):
-        kilometr = round(self.czas_minuty/self.dystans)
-        czas1 = kilometr*5
-        czas2 = kilometr*10
-        czas3 = kilometr*15
+        kilometr = round(self.czas_minuty / self.dystans)
+        czas1 = kilometr * 5
+        czas2 = kilometr * 10
+        czas3 = kilometr * 15
         return f"Międzyczasy: \n" \
                f"5km - {czas1} min\n" \
                f"10km - {czas2} min\n" \
                f"15km - {czas3} min"
+
 
 wynik1 = Wynik_biegu("Poznań", 21.097, 500, "Wojciech Szwałek", 144, "16.04.2023r.", "10:00", 180)
 
