@@ -11,6 +11,11 @@ class Pracownik:
     def __str__(self):
         return f"{self.imie} {self.nazwisko} - {self.wynagrodzenie_brutto}"
 
+    # Funkcje wyliczające koszty pracownika i pracodawcy oraz wynagrodzenie netto
+    # w oparciu o informacje z https://www.biznes.gov.pl/pl/portal/0083
+    # Funkcje zawierają możliwość podania informacji o tym, czy pracownik dojeżdża do pracy
+    # i czy odprowadza składki do PPK (wartości 'tak'/'nie')
+
     def oblicz_koszty_pracownicze(self, dojazd, ppk):
         emerytalna = self.wynagrodzenie_brutto * 0.0976
         rentowa = self.wynagrodzenie_brutto * 0.015
@@ -46,8 +51,17 @@ class Pracownik:
         return self.wynagrodzenie_brutto - emerytalna - rentowa - chorobowa - zdrowotna - zaliczka - ppk
 
 
+# Pobranie listy pracowników z pliku .csv na dysku (wartości oddzielone średnikami)
+
 pracownicy_csv = pd.read_csv(r'C:\Users\layvi\Desktop\Projekty_IO\pracownicy.csv', sep=';')
+
+# Utworzenie tabeli, w której wyświetlone zostaną wyniki obliczeń w pętli dla każdego pracownika
+
 tabela = [["Nazwisko", "Płaca brutto", "Płaca netto", "Koszty pracownicze (suma)", "Koszty pracodawcy (suma)"]]
+
+# W pętli dla każdego wiersza DataFrame importowanego z pliku .csv użytkownik pytany jest o to, czy dany pracownik
+# dojeżdża do pracy i czy odprowadza składki do PPK. W zależności od tego wywoływane są zadeklarowane
+# dla klasy Pracownik funkcje, a obliczenia są dodawane i ostatecznie wyświetlane w wyprintowanej tabeli.
 
 for _, row in pracownicy_csv.iterrows():
     pracownik = Pracownik(row["imie"], row["nazwisko"], row["wynagrodzenie_brutto"])
